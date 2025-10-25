@@ -1,16 +1,5 @@
-# Construire le projet
-Vous pouvez utiliser un dev container de base C++ de VScode.
-Le projet utilise cmake, pensez à l'inclure dans votre dev container.
+# Question 1 : 
+Dans mon TP, j'ai utilisé deux fonctionnalités dans la classe Book qui étaient essentiel dans ce projet. toFileFormat() et fromFileFormat(). Elle permet de sauvegarder de l'information (dans ce cas un livre) dans un fichier texte et de les relire plus tard pour recréer ces objets. Grâce à cette fonctionnalitées, on est aussi capable de faire des copies et de sauvegarder nos changements.
 
-Voici les lignes de commandes pour compiler le projet:
-```
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
-```
-
-# Répertoire data
-
-Il contient 2 fichiers `books.txt`et `users.txt` que vous pouvez utilisez pour tester votre code.
-Pour ca il suffit de les copiers dans le repertoire `build` avec l'application `bibliotheque`
+# Question 2 : 
+Jusqu'à présent, toutes les données du projet (livres et users) sont sauvegardées dans des fichier textes locaux sur notre appareil physique. Lorsque nos données grandiront, l'espace local de notre ordi ne sera pas assez. Une solution serait de déplacer toutes les données vers une base de données externe, comme MySQL. Cela nous permet de stocker un grand nombre de données, sauvegarder les données dans un endroit plus sécuriés et centralisé, nous donne accès aux reqêtes sql et permet aussi à plusieurs users d'accéder le système en même temps.

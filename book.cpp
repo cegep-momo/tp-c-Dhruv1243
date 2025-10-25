@@ -57,3 +57,26 @@ string Book::toString() const {
     }
     return result;
 }
+
+// Format for file storage
+std::string Book::toFileFormat() const {
+    std::string result = title + "|" + author + "|" + isbn + "|" 
+        + (isAvailable ? "1" : "0") + "|" + borrowerName;
+    return result;
+}
+
+// Parse from file format
+
+void Book::fromFileFormat(const std::string& line) {
+    std::stringstream ss(line);
+    std::string availableStr;
+
+    std::getline(ss, title, '|');
+    std::getline(ss, author, '|');
+    std::getline(ss, isbn, '|');
+    std::getline(ss, availableStr, '|');
+    std::getline(ss, borrowerName, '|');
+
+    isAvailable = (availableStr == "1");
+}
+

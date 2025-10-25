@@ -35,3 +35,15 @@ void Book::checkOut(const string& borrower) {
         std::cout << "Le livre \"" << title << "\" est déja emprunté . " <<  std::endl;
     }
 }
+
+// Return Book
+void Book::returnBook(){
+    if (!isAvailable) {
+        isAvailable = true;
+        borrowerName = "";
+        std::cout << "Le livre \"" << title << "\" a été retourné . " << std::endl;
+    }else {
+        std::cout << "Le livre \"" << title << "\" est déja retourné . " <<  std::endl;
+    }
+}
+// to string

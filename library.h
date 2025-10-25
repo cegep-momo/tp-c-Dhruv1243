@@ -49,7 +49,7 @@ public:
 
     // Sorting
     void sortBooksByTitle();
-    void sortBooksByAuthor();
+
 
 };
 

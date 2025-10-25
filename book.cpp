@@ -77,6 +77,8 @@ void Book::fromFileFormat(const std::string& line) {
     std::getline(ss, availableStr, '|');
     std::getline(ss, borrowerName, '|');
 
+    availableStr.erase(remove_if(availableStr.begin(), availableStr.end(), ::isspace), availableStr.end());
+
     isAvailable = (availableStr == "1");
 }
 

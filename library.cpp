@@ -212,3 +212,22 @@ int Library::getAvailableBookCount() const {
         });
 }
 int Library::getCheckedOutBookCount() const { return getTotalBooks() - getAvailableBookCount(); }
+
+
+// Trier les livres par titre
+void Library::sortBooksByTitle() {
+    sort(books.begin(), books.end(),
+        [](const unique_ptr<Book>& a, const unique_ptr<Book>& b) {
+            return a->getTitle() < b->getTitle();
+        });
+    cout << "Les livres sont maintenant triés par titre.\n";
+}
+
+// Trier les livres par auteur
+void Library::sortBooksByAuthor(){
+    sort(books.begin(), books.end(), 
+        [](const unique_ptr<Book>& a, const unique_ptr<Book>& b){
+            return a->getAuthor() < b->getAuthor();
+        });
+    cout << "Les livres sont maintenant triés par auteur.\n";
+}

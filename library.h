@@ -46,6 +46,11 @@ public:
     int getTotalBooks() const;
     int getAvailableBookCount() const;
     int getCheckedOutBookCount() const;
+
+    // Sorting
+    void sortBooksByTitle();
+    void sortBooksByAuthor();
+
 };
 
 #endif

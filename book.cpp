@@ -47,3 +47,13 @@ void Book::returnBook(){
     }
 }
 // to string
+string Book::toString() const {
+    string result = "Titre: " + title + "\nAuteur " + author+ 
+                        "\nISBN : " + isbn + "\nDisponible : " + (isAvailable ? std::string("Oui") : std::string("Non"));
+    
+    if (!isAvailable) {
+        result += "\nEmprunté par: " + borrowerName;
+
+    }
+    return result;
+}

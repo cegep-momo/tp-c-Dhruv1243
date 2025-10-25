@@ -22,7 +22,7 @@ string Book::getBorrowerName() const { return borrowerName; }
 void Book::setTitle(const string& title) { this->title = title; }
 void Book::setAuthor(const string& author) { this->author = author; }
 void Book::setISBN(const string& isbn)  { this->isbn = isbn;}
-void Book::setAvailability(bool available)  {  isAvailable = available;}
+void Book::setAvailability(bool available)  { isAvailable = available;}
 void Book::setBorrowerName(const string& borrowerName)  { this->borrowerName = borrowerName; }
 
 // Checkout

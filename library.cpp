@@ -15,14 +15,24 @@ void Library::addBook(const Book& book) {
 
 // Remove book from library
 bool Library::removeBook(const string& isbn) {
+    std::string reponse;
+
     auto it = find_if(books.begin(), books.end(),
         [&isbn](const unique_ptr<Book>& book) {
             return book->getISBN() == isbn;
         });
     
     if (it != books.end()) {
+        std::cout << "Êtes-vous sûr de vouloir supprimer le livre : \""
+             << (*it)->getTitle() << "\" ? (o/n): "<< std::endl;
+        std::cin >> reponse;
+        if(reponse == "o" || reponse == "O"){
         books.erase(it);
         return true;
+        } else {
+           std::cout << "Le livre n'a pas été supprimé. \"" << std::endl;
+           return false;
+        }
     }
     return false;
 }

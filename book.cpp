@@ -1,6 +1,6 @@
 #include <sstream>
 #include <algorithm>
-
+#include <iostream>
 #include "book.h"
 
 
@@ -24,3 +24,14 @@ void Book::setAuthor(const string& author) { this->author = author; }
 void Book::setISBN(const string& isbn)  { this->isbn = isbn;}
 void Book::setAvailability(bool available)  {  isAvailable = available;}
 void Book::setBorrowerName(const string& borrowerName)  { this->borrowerName = borrowerName; }
+
+// Checkout
+void Book::checkOut(const string& borrower) {
+    if (isAvailable){
+        isAvailable = false;
+        borrowerName = borrower;
+        std::cout << "Le livre \"" << title << "\" a été emprunté par " << borrower << "." << std::endl;
+    } else {
+        std::cout << "Le livre \"" << title << "\" est déja emprunté . " <<  std::endl;
+    }
+}
